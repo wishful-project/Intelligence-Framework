@@ -1,0 +1,32 @@
+{
+    "name"         : "ewine",
+    "version"      : "0.0.1",
+    "description"  : "Prototype front-end visualisation for ewine",
+    "dependencies": {
+    },
+    "keywords": [ "ewine" ],
+    "node-red"     : {
+        "nodes": {
+         "experiment-execution-cooja": "experiment-execution-cooja/cooja.js",
+         "experiment-execution-portable": "experiment-execution-portable/portable.js",
+         "experiment-execution-twist": "experiment-execution-twist/twist.js",
+         "experiment-execution-wilab2": "experiment-execution-wilab2/wilab2.js",
+         
+         "experiment-planning-ESP": "experiment-planning-ESP/esp.js",
+         "experiment-planning-LA": "experiment-planning-LA/la.js",
+         "experiment-planning-LHD": "experiment-planning-LHD/lhd.js",
+         "experiment-planning-rand": "experiment-planning-rand/random.js",
+         
+         "reasoning-diagnostics": "reasoning-diagnostics/diagnostics.js",
+         "reasoning-model": "reasoning-model-creation/model.js",
+         "reasoning-outlier": "reasoning-outlier/outlier.js",
+         "reasoning-surrogate": "reasoning-surrogate/surrogate.js",
+         
+         "reasoning-featuregen": "reasoning-featuregen/featuregen.js",
+         "reasoning-weka": "reasoning-weka/weka.js",
+         "reasoning-testmodel": "reasoning-weka/testmodel.js"
+    	}
+    	
+     }
+}
+
