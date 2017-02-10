@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Weka',{
+        category: 'Reasoning', //'data_preprocessing',
+        color:"darksalmon",
+        defaults: {
+            modelfile: {value:"",required:true},
+            timer: {value:""},
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:3,
+        icon: "arrow-in.png",
+        align: "right",
+        label: function() {
+            var filename = this.modelfile.replace(/^.*[\\\/]/, '')
+            return "[weka] generating: " + filename
+            return this.name || this.modelfile;
+        },
+        labelStyle: function() {
+            return this.name?"node_label_italic":"";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Weka">
+    <div class="form-row">
+        <label for="node-input-modelfile"><i class="fa fa-file"></i>  Path to model file</label>
+        <input type="text" id="node-input-modelfile" placeholder="/home/user/example/file.model">
+    </div>
+   
+    <div class="form-row">
+        <label for="node-input-timer"><i class="fa fa-clock-o"></i> timeout</label>
+        <input type="text" id="node-input-timer" style="width:50px; text-align:end;" placeholder="0"> seconds
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> name</label>
+        <input type="text" id="node-input-name" placeholder="name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Weka">
+    <p>Intelligence framework - Weka intelligence module creation.<br/></p>
+    <p>Feed path to Trainset CSV via msg.payload.
+        weka.jar is started with parameters: -L 0.1 -N 2000 -H 10 <br/>
+        TODO: more info.</p>
+    
+</script>
+
