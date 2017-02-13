@@ -1,0 +1,81 @@
+<script type="text/javascript">
+
+  RED.nodes.registerType('wishful-upi-exec', {
+    category: 'wishful',
+    color: '#E9967A',
+    defaults: {
+      name: {
+        value: ""
+      },
+      upitype: {
+        value: "",
+        required: true
+      },
+      func: {
+        value: "",
+        required: true
+      },
+      nodes: {
+        value: "",
+        required: true
+      },
+      paramname : {
+      	value: "",
+      	required: true
+      },
+      paramval : {
+      	value: "",
+      	required: false
+      },
+      topics: {
+        value: ""
+      }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "api.png",
+    label: function() {
+      return this.name ? (this.name + "::" + this.paramname + "(" + this.paramval + ")" ) : "wishful-upi-exec";
+    }
+  });
+  
+</script>
+
+<script type="text/x-red" data-template-name="wishful-upi-exec">
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+        <label for="node-input-upitype"><i class="fa fa-tasks"></i> Type:</label>
+        <select type="text" id="node-input-upitype" style="width:74%;">
+            <option value="radio">radio</option>
+            <option value="other" >PLACEHOLDER1</option>
+            
+        </select>
+  </div>
+  <div class="form-row">
+        <label for="node-input-func"><i class="fa fa-tasks"></i> Action:</label>
+        <select type="text" id="node-input-func" style="width:74%;">
+            <option value="get_parameters" >get_parameters</option>
+            <option value="set_parameters" SELECTED>set_parameters</option>
+            
+        </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-nodes"><i class="fa fa-wrench"></i> Nodes:</label>
+    <input type="text" id="node-input-nodes" placeholder="[1,2,3]">
+  </div>
+  <div class="form-row">
+    <label for="node-input-paramname" style="width:35%;"><i class="fa fa-wrench"></i> Parameter Name:</label>
+    <input type="text" id="node-input-paramname" placeholder="IEEE802154_phyCurrentChannel" style="width:60%;">
+  </div>
+  <div class="form-row">
+    <label for="node-input-paramval" style="width:35%;"><i class="fa fa-wrench"></i> Parameter Value:</label>
+    <input type="text" id="node-input-paramval" placeholder="12" style="width:60%;">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="wishful-upi-exec">
+  <p>Wishful UPI executor. Executes a UPI call.</p>
+</script>
