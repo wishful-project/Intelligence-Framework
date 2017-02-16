@@ -1,0 +1,21 @@
+{
+    "name"         : "wishful",
+    "version"      : "0.0.1",
+    "description"  : "Prototype front-end visualisation for wishful measurment collection",
+    "dependencies": {
+    },
+    "keywords": [ "wishful" ],
+    "node-red"     : {
+        "nodes": {         
+         "planning-exhaustive-search": "planning-exhaustive-search/exhaustive.js",         
+         "miscellaneous-cooja": "miscellaneous-cooja/cooja.js",
+         "miscellaneous-file_out": "miscellaneous-file_out/file_out.js",
+         "miscellaneous-js2xml": "miscellaneous-js2xml/js2xml.js",
+         "miscellaneous-tcpClient": "miscellaneous-tcpClient/tcpClient.js",
+         "miscellaneous-UPI_exec": "miscellaneous-UPI_exec/UPI_exec.js",
+         "miscellaneous-split_WI": "miscellaneous-split_WI/split_WI.js"
+    	}
+    	
+     }
+}
+
