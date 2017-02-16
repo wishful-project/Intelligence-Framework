@@ -34,9 +34,9 @@ In the last phase, a final action is executed which can be as complex as a detai
 
 So, how do we create a fully functional Cooja measurement collector?
 
-First and foremost, the Contiki/Cooja network simulator must be installed and become ready for experimentation. The easiest way to achieve this is by using a virtual machine [image](http://www.contiki-os.org/start.html) having all components pre-installed. However fast and simple this approach is, it also has performance limitation and installing directly on the host machine might be a preferred [approach](http://anrg.usc.edu/contiki/index.php/Installation) if performance is the limiting factor.
+First and foremost, the Contiki/Cooja network simulator must be installed and become ready for experimentation. The easiest way to achieve this is by using a virtual machine [image](http://www.contiki-os.org/start.html) having all components pre-installed. However fast and simple this approach is, it also has performance limitation and installing directly on the host machine might be a preferred [approach](https://github.ugent.be/IBCN-mobile/contiki) if performance is the limiting factor.
 
-Next, the node-red front end is configured by installing two programs: a [node.js](https://nodejs.org/) JavaScript runtime engine and a [node-red](https://nodered.org/node-red) framework. For the installation procedure, please use the official [tutorial](https://nodered.org/docs/getting-started/installation) since the two programs are actively developed.
+Next, the node-red front end is configured by installing two programs: a [node.js](https://nodejs.org/) JavaScript runtime engine and a [node-red](https://nodered.org/) framework. For the installation procedure, please use the official [tutorial](https://nodered.org/docs/getting-started/installation) since the two programs are actively developed.
 
 After installing the Cooja network simulator and the node-red front-end, the pts multiplexer is installed by compiling the program inside the pts_mux directory and placing it to a local system path.
 ```bash
