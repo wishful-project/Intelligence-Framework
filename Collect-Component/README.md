@@ -67,12 +67,15 @@ PL = PL0 + 10*n*x
 ```
 
 Where	  PL = Path loss between a source and a sink
+
 	PL0 = Reference path loss at a distance of 1m from a source
+
 	  n = Path loss coefficient
+
 	  x = 10*log(distance between source and sink)
 
 ### Note
-The proof of concept node-red flow, discussed so far, is located in the file *flow_PL.json*.
+The proof of concept node-red flow, discussed so far, is located in the file [flow_PL.json](flow_PL.json).
 
 
 ## Contact
