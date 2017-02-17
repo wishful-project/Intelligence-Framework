@@ -73,7 +73,7 @@ Where
 * n = Path loss coefficient
 * x = 10*log(distance between source and sink)
 
-### Note
+#### Note
 The proof of concept node-red flow, discussed so far, is located in the file [flow_PL.json](flow_PL.json).
 
 
