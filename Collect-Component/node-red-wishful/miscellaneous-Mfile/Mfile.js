@@ -20,7 +20,7 @@ module.exports = function(RED)
 	var fs = require("fs-extra");
 	var os = require("os");
 
-	function file_out(n)
+	function Mfile_out(n)
 	{
 		RED.nodes.createNode(this,n);
 		this.appendNewline = n.appendNewline;
@@ -66,17 +66,15 @@ module.exports = function(RED)
 					data = new Buffer(data);
 					if (this.overwriteFile === "true")
 					{
-						// using "binary" not {encoding:"binary"} to be 0.8 compatible for a while
 						fs.writeFile(filename, data, "binary", function (err)
 						{
-							//fs.writeFile(filename, data, {encoding:"binary"}, function (err) {
 							if (err)
 							{
 								node.error(RED._("write failed", {error:err.toString()}), content);
 							}
 							else
 							{
-								// Decreate content count after being overwritten
+								// Decrease content count after being overwritten
 								content_count--;
 								// If all contents are written to files
 								if(content_count === 0)
@@ -89,10 +87,8 @@ module.exports = function(RED)
 					}
 					else
 					{
-						// using "binary" not {encoding:"binary"} to be 0.8 compatible for a while longer
 						fs.appendFile(filename, data, "binary", function (err)
 						{
-							//fs.appendFile(filename, data, {encoding:"binary"}, function (err) {
 							if (err)
 							{
 								node.error(RED._("append failed", {error:err.toString()}), content);
@@ -118,5 +114,44 @@ module.exports = function(RED)
 			node.status({});
 		});
 	}
-	RED.nodes.registerType("file_out",file_out);
+	RED.nodes.registerType("Mfile_out",Mfile_out);
+
+	function Mfile_in(n)
+	{
+		RED.nodes.createNode(this,n);
+		this.format = n.format;
+		var node = this;
+
+		var options = {};
+		if (this.format)
+			options['encoding'] = this.format;
+
+		this.on("input",function(msg)
+		{
+			var filename_array = msg.filenames;
+
+			var payload = [];
+			for(var i = 0; i < msg.filenames.length; i++)
+			{
+				var filename = filename_array[i];
+				if (filename === "")
+				{
+					node.warn("no file name specified");
+				}
+				else
+				{
+					var data = fs.readFileSync(filename,options);
+					payload.push({filename: filename, payload: data});
+				}
+			}
+			node.status({});
+			node.send({payload: payload});
+			
+		});
+		this.on('close', function()
+		{
+			node.status({});
+		});
+	}
+	RED.nodes.registerType("Mfile_in",Mfile_in);
 }

@@ -63,7 +63,7 @@ So far we have discussed the operation of the measurement collection tool and th
 Every time a source node sends a packet, the sink node stores an aggregate Received Signal Strength Indicator (RSSI) and the amount of packets processed. This will give an average RSSI value over a period of time. The node-red front-end then collects all average RSSI values from the sink node for every txPower parameters defined inside PUT. In sum, txPower is configured on each source node and the average RSSI is collected at the sink node. At the end of the simulation, node-red collects N datasets equal to the number source nodes. Finally, the path loss coefficient and the reference path loss are calculated by using the [Log-distance path loss](https://en.wikipedia.org/wiki/Log-distance_path_loss_model) model shown below
 
 ```
-PL = PL0 + 10*n*x
+PL = PL0 + n*x
 ```
 
 Where
@@ -74,7 +74,7 @@ Where
 * x = 10*log(distance between source and sink)
 
 #### Note
-The proof of concept node-red flow, discussed so far, is located in the file [flow_PL.json](flow_PL.json).
+In order to repeat the proof of concept discussed so far, you need a node-red [flow](flow_PL.json) and a Contiki [firmware](single-hop_WSN.rm090) using a [single-hop](single-hop_WSN.c) WSN application.
 
 
 ## Contact
