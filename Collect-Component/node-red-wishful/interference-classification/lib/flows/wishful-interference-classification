@@ -1,0 +1,1 @@
+[{"id":"bc8f1f5a.29f06","type":"inject","z":"f2cccb72.b30aa8","name":"Network topology ","topic":"trial","payload":"PROVA","payloadType":"str","repeat":"300","crontab":"","once":false,"x":110,"y":240,"wires":[["782f03a8.806e7c"]]}]

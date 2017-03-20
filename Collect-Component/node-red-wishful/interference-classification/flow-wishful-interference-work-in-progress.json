@@ -1,0 +1,90 @@
+[
+    {
+        "id": "f2cccb72.b30aa8",
+        "type": "tab",
+        "label": "WiSHFUL intelligence"
+    },
+    {
+        "id": "bc8f1f5a.29f06",
+        "type": "inject",
+        "z": "f2cccb72.b30aa8",
+        "name": "Network topology ",
+        "topic": "trial",
+        "payload": "PROVA",
+        "payloadType": "str",
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "782f03a8.806e7c"
+            ]
+        ]
+    },
+    {
+        "id": "5f0e3a53.dd2a34",
+        "type": "debug",
+        "z": "f2cccb72.b30aa8",
+        "name": "Interference Class",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 830,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a29c2e81.feb9b",
+        "type": "interference-classifier",
+        "z": "f2cccb72.b30aa8",
+        "name": "",
+        "x": 570,
+        "y": 200,
+        "wires": [
+            [
+                "5f0e3a53.dd2a34"
+            ]
+        ]
+    },
+    {
+        "id": "cf6397d1.6030c8",
+        "type": "comment",
+        "z": "f2cccb72.b30aa8",
+        "name": "WiSHFUL project",
+        "info": "This is a flow to predict interference by classifying it in 'no interference', 'refrained', 'collision'",
+        "x": 120,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "782f03a8.806e7c",
+        "type": "function",
+        "z": "f2cccb72.b30aa8",
+        "name": "extractFeatures",
+        "func": "msg.payload = Math.round(Math.random()*3);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "a29c2e81.feb9b",
+                "63819080.c93ac"
+            ]
+        ]
+    },
+    {
+        "id": "63819080.c93ac",
+        "type": "debug",
+        "z": "f2cccb72.b30aa8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 510,
+        "y": 280,
+        "wires": []
+    }
+]

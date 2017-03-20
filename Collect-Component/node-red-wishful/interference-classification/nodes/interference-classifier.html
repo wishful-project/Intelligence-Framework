@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('interference-classifier',{
+        category: 'WiSHFUL',
+        color: '#a6bbcf',
+        // color: '#ff0000',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "classifier.png",
+        align: 'right',
+        inputLabels: "parameter for input",
+        // outputLabels: "output-class",
+        label: function() {
+            return this.name||"WiSHFUL interference classifier";
+        }
+    
+    });
+</script>
+
+<script type="text/x-red" data-template-name="interference-classifier">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="interference-classifier">
+    <p>An interference classifier based on the BaggedTree algorithm.
+    It returns the estimated interference class for a specific node</p>
+</script>
