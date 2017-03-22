@@ -8,7 +8,7 @@
 
 clear all;
 close all;
-%% FLAGS
+%% CONFIGURATION
 DEBUG = false;
 RECORDING = false;
 FILE_RECORDING=false;
