@@ -3,9 +3,7 @@
 
 This intelligence module recognizes the presence of hidden and exposed nodes in high-density scenarios. It is well known that in case of high-density deployments, WiFi networks suffer from serious performance impairments due to hidden and exposed nodes, belonging to overlapping BSSs (OBSSs) that interfere each other. In dense environments, pathological topologies with hidden and exposed nodes are more probable to occur than in sparse wireless networks.
 
-<img src="figures/classification.png" alt="classification" style="width: 400px;"/>
-
-![interference classification output](figures/classification.png =250px)
+![interference classification output](figures/classification.png)
 
 *Figure 1. the mapping between the three classes of the interference classification and performance figures (transmission attempts and successful transmissions)*
 
@@ -53,7 +51,7 @@ Classification results aim to evaluate the efficacy of recognition capabilities,
 
 ![node-red interference classification module](figures/classification-results.png)
 
-*Figure 1. WiSHFUL node-red module for interference classification *
+*Figure 2. classification results using confusion matrices*
 
 ## Communication between Matlab&reg; and node-red
 
@@ -63,7 +61,7 @@ Under the WiSHFUL group there is the interference classification component. Give
 
 ![node-red interference classification module](figures/screenshot.png)
 
-*Figure 1. WiSHFUL node-red module for interference classification *
+*Figure 3. WiSHFUL node-red module for interference classification*
 
 The integration between our Matlab&reg; scripts and node-red will be updated soon, please stay tuned.
 
