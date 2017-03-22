@@ -84,6 +84,7 @@ if s>1
     fprintf('the graph is not connected!!!\n');
     %   error('the graph is not connected!!!\n');
     %nodes= find(c==mode(c)); % get nodes that are in the biggest connected graph available (mode takes the max frequent value)
+    exit;
 end
 
 %visualization of the transmitting nodes (edges in red)
