@@ -8,6 +8,7 @@ node-red flowMACSelection.json
 
 ## Requirements
 **Python**
+
 <ul>
 	<li>Python3</li>
 	<li>numpy</li>
@@ -15,6 +16,7 @@ node-red flowMACSelection.json
 </ul>
 
 **node-red "Perfpred" module**
+
 Install the module as follows:
 ```
 npm install C:\pathto\Intelligence-Framework\node-red-modules\MAC-performance-prediction
