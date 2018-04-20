@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    RED.nodes.registerType('perfpred', {
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "perf.png",
+        label: function () {
+            return this.name || "perfpred";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="perfpred">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="perfpred">
+    <p>This node predicts the performance of ContikiMAC and CSMA given an environment.</p>
+    <p>Input parameters:</p>
+    <ul>
+        <li># nodes</li>
+        <li>Average distance to sink</li>
+        <li>Average distance to distruber</li>
+        <li>Distance between sink and distruber</li>
+        <li>Message sending interval (sec)</li>
+        <li>Interference duty cycle (%)</li>
+    </ul>
+
+    <p>Output parameters (for each MAC protocol):</p>
+    <ul>
+        <li>Latency (ms)</li>
+        <li>Packet error rate (%)</li>
+        <li>Sink energy (mJ)</li>
+        <li>Avg. source energy (mJ)</li>
+    </ul>
+</script>
