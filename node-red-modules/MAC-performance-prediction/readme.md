@@ -1,11 +1,5 @@
 # MAC performance prediction
 
-This example can be run as follows: 
-
-```
-node-red flowMACSelection.json
-```
-
 ## Requirements
 **Python**
 <ul>
@@ -43,24 +37,5 @@ Output parameters (for each MAC protocol):
     <li>Avg. source energy (mJ)</li>
 </ul>
 
-This example illustrates some important configuration needed to use the node-red module "Perfpred". The path to run Python must be set as follows:
-
-```javascript
-var flowContext = context.flow;
-var python_path = "C:\\pathto\\python.exe";
-flowContext.set('pythonpath',python_path);
-```
-
-Input parameters must be passed in the payload variable as a "input_parameters" property:
-
-```javascript
-{"input_params":[1,19.386593,3.6,18.35647,6,30]}
-```
-Finnaly, as a proof-of-concept for MAC selection, a function called "MAC selection" is also presented in this example. This function will select the best performing MAC protocol based on the prediction performance metrics and the performance function. The weights of this function are initialized at the top of this function. The output of this module should look like the example below.
-
-```
-Select MAC: CSMA
-Score CONTIKIMAC vs CSMA: 33.2460868 vs 12.22197838
-Results CONTIKIMAC: {"LAT":281.81393177,"PER":33.2460868,"ENGSink":21.11311609,"ENGSource":24.72694432}
-Results CSMA: {"LAT":31.73929926,"PER":12.22197838,"ENGSink":412.24438319,"ENGSource":411.89517067}
-```
+## Example
+See examples for usage of this module and a proof-of-concept for MAC selection.
