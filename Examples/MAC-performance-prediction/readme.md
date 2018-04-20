@@ -45,6 +45,7 @@ Output parameters (for each MAC protocol):
     <li>Avg. source energy (mJ)</li>
 </ul>
 
+## Example
 This example illustrates some important configuration needed to use the node-red module "Perfpred". The path to run Python must be set as follows:
 
 ```javascript
