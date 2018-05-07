@@ -1,7 +1,7 @@
 {
   "name": "perfpred",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Intelligence module predicting the MAC performance.",
   "main": "doc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +12,9 @@
     "nodes": {
       "lower-case": "perfpred.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wishful-project/Intelligence-Framework/tree/master/node-red-modules/MAC-performance-prediction"
   }
 }

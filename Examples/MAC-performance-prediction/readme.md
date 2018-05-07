@@ -23,7 +23,7 @@ npm install C:\pathto\Intelligence-Framework\node-red-modules\MAC-performance-pr
 ```
 
 ## Intelligence module
-The intelligence module predicts the MAC performance of ContikiMAC and CSMA given a description of the environment. This description requires the following metrics:
+The intelligence module predicts the MAC performance of ContikiMAC, CSMA and TDMA given a description of the environment. This description requires the following metrics:
 <ul>
         <li># nodes</li>
         <li>Average power to sink</li>
@@ -62,8 +62,9 @@ Input parameters must be passed in the payload variable as a "input_parameters" 
 Finnaly, as a proof-of-concept for MAC selection, a function called "MAC selection" is also presented in this example. This function will select the best performing MAC protocol based on the prediction performance metrics and the performance function. The weights of this function are initialized at the top of this function. The output of this module should look like the example below.
 
 ```
-Select MAC: CSMA
-Score CONTIKIMAC vs CSMA: 33.2460868 vs 12.22197838
-Results CONTIKIMAC: {"LAT":281.81393177,"PER":33.2460868,"ENGSink":21.11311609,"ENGSource":24.72694432}
-Results CSMA: {"LAT":31.73929926,"PER":12.22197838,"ENGSink":412.24438319,"ENGSource":411.89517067}
+Select MAC: TDMA
+Score CONTIKIMAC vs CSMA vs TDMA: 4112.46695991 vs 1731.64740347 vs 1304.31374567
+Results CONTIKIMAC: {"LAT":288.65989175,"PER":23.57554087,"ENGSink":22.34641792,"ENGSource":24.74458099}
+Results CSMA: {"LAT":31.61354421,"PER":11.85506207,"ENGSink":412.05372759,"ENGSource":410.70513028}
+Results TDMA: {"LAT":34.73715921,"PER":17.88125665,"ENGSink":40.29786056,"ENGSource":22.58146051}
 ```

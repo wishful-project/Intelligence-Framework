@@ -17,7 +17,7 @@ npm install C:\pathto\Intelligence-Framework\node-red-modules\MAC-performance-pr
 ```
 
 ## Intelligence module
-The intelligence module predicts the MAC performance of ContikiMAC and CSMA given a description of the environment. This description requires the following metrics:
+The intelligence module predicts the MAC performance of ContikiMAC, CSMA and TDMA given a description of the environment. This description requires the following metrics:
 <ul>
         <li># nodes</li>
         <li>Average power to sink</li>
